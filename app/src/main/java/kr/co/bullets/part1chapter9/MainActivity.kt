@@ -51,4 +51,9 @@ class MainActivity : AppCompatActivity() {
 //        mediaPlayer?.release()
 //        mediaPlayer = null
     }
+
+    override fun onDestroy() {
+        stopService(Intent(this, MediaPlayerService::class.java))
+        super.onDestroy()
+    }
 }
